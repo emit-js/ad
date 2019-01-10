@@ -3,8 +3,7 @@
 "use strict";
 
 var ad = require("./ad"),
-  dot = require("dot-event")(),
-  store = require("@dot-event/store")
+  dot = require("dot-event")()
 
 var initPromise = new Promise(function(resolve) {
   window.googletag.cmd.push(function() {
@@ -19,7 +18,6 @@ var initPromise = new Promise(function(resolve) {
   })
 })
 
-store(dot)
 ad(dot, { initPromise: initPromise })
 
 dot("ad", {

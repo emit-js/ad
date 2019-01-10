@@ -27,16 +27,9 @@ module.exports = function(dot, opts) {
 
 function ad(o) {
   var dot = o.dot,
-    opt = o.opt,
-    prop = o.prop
+    opt = o.opt
 
   var promise = dot.state.ad.initPromise
-
-  if (opt.config) {
-    promise = promise.then(function() {
-      dot.set(prop, "config", opt.config)
-    })
-  }
 
   if (opt.unit) {
     promise = promise.then(function() {
@@ -68,11 +61,10 @@ function setupListeners() {
 }
 
 function targets(o) {
-  var dot = o.dot
-  var t = dot.get("ad.targets") || {}
+  var opt = o.opt
 
-  for (var k in t) {
-    window.googletag.pubads().setTargeting(k, t[k] || "")
+  for (var k in opt) {
+    window.googletag.pubads().setTargeting(k, opt[k] || "")
   }
 }
 
