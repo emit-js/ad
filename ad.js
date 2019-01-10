@@ -84,7 +84,7 @@ function unit(slots, u) {
   var promise, slot
 
   if (destroy) {
-    window.googletag.destroySlots(slots[divId])
+    window.googletag.destroySlots([slots[divId]])
   } else if (refresh) {
     window.googletag.pubads().refresh([slots[divId]])
   } else if (oop) {
