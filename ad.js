@@ -80,7 +80,6 @@ function unit(slots, u) {
     divId = u.divId,
     oop = u.oop,
     path = u.path,
-    refresh = u.refresh,
     sizeMap = u.sizeMap,
     sizes = u.sizes,
     targets = u.targets
@@ -89,7 +88,7 @@ function unit(slots, u) {
 
   if (destroy) {
     window.googletag.destroySlots([slots[divId]])
-  } else if (refresh) {
+  } else if (slots[divId]) {
     window.googletag.pubads().refresh([slots[divId]])
   } else if (oop) {
     slot = window.googletag.defineOutOfPageSlot(path, divId)
