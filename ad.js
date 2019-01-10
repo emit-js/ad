@@ -18,6 +18,8 @@ module.exports = function(dot, opts) {
   )
 
   dot.any("ad", ad)
+  dot.any("adTargets", targets)
+
   dot.state.ad.initPromise.then(setupListeners.bind(dot))
 
   return dot
@@ -63,6 +65,15 @@ function setupListeners() {
     .addEventListener("slotOnload", function(e) {
       dot("adLoaded", { divId: e.slot.getSlotElementId() })
     })
+}
+
+function targets(o) {
+  var dot = o.dot
+  var t = dot.get("ad.targets") || {}
+
+  for (var k in t) {
+    window.googletag.pubads().setTargeting(k, t[k] || "")
+  }
 }
 
 function unit(slots, u) {
