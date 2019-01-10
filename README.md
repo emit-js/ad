@@ -42,9 +42,9 @@ dot.ad({
 
 | Option         | Description                                                                                                                     |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `unit.divId`   | `[googletag.defineSlot](https://developers.google.com/doubleclick-gpt/reference#googletag.defineSlot) opt_div`                  |
-| `unit.path`    | `[googletag.defineSlot](https://developers.google.com/doubleclick-gpt/reference#googletag.defineSlot) path`                     |
-| `unit.sizes`   | `[googletag.defineSlot](https://developers.google.com/doubleclick-gpt/reference#googletag.defineSlot) size`                     |
-| `unit.sizeMap` | `[googletag.sizeMapping](https://developers.google.com/doubleclick-gpt/reference#googletag.Slot_defineSizeMapping) sizeMapping` |
+| `unit.divId`   | [googletag.defineSlot](https://developers.google.com/doubleclick-gpt/reference#googletag.defineSlot) `opt_div`                  |
+| `unit.path`    | [googletag.defineSlot](https://developers.google.com/doubleclick-gpt/reference#googletag.defineSlot) `path`                     |
+| `unit.sizes`   | [googletag.defineSlot](https://developers.google.com/doubleclick-gpt/reference#googletag.defineSlot) `size`                     |
+| `unit.sizeMap` | [googletag.sizeMapping](https://developers.google.com/doubleclick-gpt/reference#googletag.Slot_defineSizeMapping) `sizeMapping` |
 | `unit.a9`      | Attach A9 header bidding                                                                                                        |
 | `unit.destroy` | Destroy unit at `divId`                                                                                                         |
