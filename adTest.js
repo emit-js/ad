@@ -29,7 +29,7 @@ dot("ad", {
 })
 
 // eslint-disable-next-line no-console
-dot.on("adLoaded", console.log)
+dot.any("adLoaded", console.log)
 
 // eslint-disable-next-line no-console
-dot.on("adRendered", console.log)
+dot.any("adRendered", console.log)

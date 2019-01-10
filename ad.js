@@ -50,8 +50,10 @@ function setupListeners() {
   window.googletag
     .pubads()
     .addEventListener("slotRenderEnded", function(e) {
-      dot("adRendered", {
-        divId: e.slot.getSlotElementId(),
+      var divId = e.slot.getSlotElementId()
+
+      dot("adRendered", divId, {
+        divId: divId,
         isEmpty: e.isEmpty,
         size: e.size,
       })
@@ -60,7 +62,9 @@ function setupListeners() {
   window.googletag
     .pubads()
     .addEventListener("slotOnload", function(e) {
-      dot("adLoaded", { divId: e.slot.getSlotElementId() })
+      var divId = e.slot.getSlotElementId()
+
+      dot("adLoaded", divId, { divId: divId })
     })
 }
 
