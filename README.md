@@ -8,7 +8,7 @@ npm install dot-event @dot-event/ad
 
 ```js
 import ad from "@dot-event/ad"
-import Dot from "dot-event"
+import dotEvent from "dot-event"
 
 // Create googletag init promise
 //
@@ -23,9 +23,9 @@ const initPromise = new Promise(resolve => {
 
 // Create dot-event instance
 //
-const dot = new Dot()
+const dot = dotEvent()
 
-// Add ad functionality
+// Add ad functionality to dot
 //
 ad(dot, { initPromise: initPromise })
 
