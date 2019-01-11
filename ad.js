@@ -23,21 +23,20 @@ module.exports = function(dot, opts) {
   return dot
 }
 
-function ad(o) {
-  var dot = o.dot,
-    opt = o.opt
+function ad(arg, opts) {
+  var dot = opts.dot
 
   var promise = dot.state.ad.initPromise
 
-  if (opt.unit) {
+  if (arg.unit) {
     promise = promise.then(function() {
-      unit(dot.state.ad.slots, opt.unit)
+      unit(dot.state.ad.slots, arg.unit)
     })
   }
 
-  if (opt.targets) {
+  if (arg.targets) {
     promise = promise.then(function() {
-      targets(opt.targets)
+      targets(arg.targets)
     })
   }
 
