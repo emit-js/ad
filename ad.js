@@ -3,12 +3,11 @@
 "use strict";
 
 module.exports = function(dot, opts) {
-  opts = opts || {}
-
   if (dot.state.ad) {
     return dot
   }
 
+  opts = opts || {}
   dot.state.ad = Object.assign(
     {
       initPromise: Promise.resolve(),
@@ -23,9 +22,7 @@ module.exports = function(dot, opts) {
   return dot
 }
 
-function ad(arg, opts) {
-  var dot = opts.dot
-
+function ad(prop, arg, dot) {
   var promise = dot.state.ad.initPromise
 
   if (arg.unit) {
