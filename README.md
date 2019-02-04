@@ -1,14 +1,21 @@
 # ad
 
+dot-event gpt ads
+
 ![coke](http://25.media.tumblr.com/tumblr_m8i6rmeQDH1r49l3lo1_500.gif)
+
+## Install
 
 ```bash
 npm install dot-event @dot-event/ad
 ```
 
+## Usage
+
 ```js
-import ad from "@dot-event/ad"
-import dotEvent from "dot-event"
+// Create dot-event instance
+//
+const dot = require("dot-event")()
 
 // Create googletag init promise
 //
@@ -21,13 +28,9 @@ const initPromise = new Promise(resolve => {
   })
 })
 
-// Create dot-event instance
+// Extend dot with ad listener
 //
-const dot = dotEvent()
-
-// Add ad functionality to dot
-//
-ad(dot, { initPromise: initPromise })
+require("@dot-event/ad")(dot, { initPromise: initPromise })
 
 // Display an ad unit
 //
@@ -39,6 +42,8 @@ dot.ad({
   },
 })
 ```
+
+## Options
 
 | Option         | Description                                                                                                                     |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
