@@ -53,3 +53,10 @@ dot.ad({
 | `unit.sizeMap` | [googletag.sizeMapping](https://developers.google.com/doubleclick-gpt/reference#googletag.Slot_defineSizeMapping) `sizeMapping` |
 | `unit.a9`      | Attach A9 header bidding                                                                                                        |
 | `unit.destroy` | Destroy unit at `divId`                                                                                                         |
+
+## Events
+
+```js
+dot.any("adLoaded", console.log)
+dot.any("adRendered", console.log)
+```
