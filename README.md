@@ -2,7 +2,7 @@
 
 dot-event gpt ads
 
-![coke](http://25.media.tumblr.com/tumblr_m8i6rmeQDH1r49l3lo1_500.gif)
+![coke](coke.gif)
 
 ## Install
 
