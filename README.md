@@ -1,6 +1,6 @@
 # ad
 
-dot-event gpt ads
+[dot-event](https://github.com/dot-event/dot-event2#readme) gpt ads
 
 ![coke](coke.gif)
 
