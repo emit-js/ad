@@ -22,7 +22,7 @@
     "test": "webpack adTest.js --mode=development -o adTestBundle.js; open adTest.html"
   },
   "devDependencies": {
-    "dot-event": "3.0.31",
+    "dot-event": "3.0.32",
     "eslint": "5.13.0",
     "eslint-config-prettier": "4.0.0",
     "eslint-plugin-prettier": "3.0.1",
