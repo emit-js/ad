@@ -2,19 +2,15 @@
 /*prettier-ignore*/
 "use strict";
 
-module.exports = function(dot, opts) {
-  if (dot.state.ad) {
+module.exports = function(dot) {
+  if (dot.ad) {
     return dot
   }
 
-  opts = opts || {}
-  dot.state.ad = Object.assign(
-    {
-      initPromise: Promise.resolve(),
-      slots: {},
-    },
-    opts
-  )
+  dot.state.ad = {
+    initPromise: Promise.resolve(),
+    slots: {},
+  }
 
   dot.any("ad", ad)
   dot.state.ad.initPromise.then(setupListeners.bind(dot))
