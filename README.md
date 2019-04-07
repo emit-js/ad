@@ -1,21 +1,21 @@
 # ad
 
-[dot-event](https://github.com/dot-event/dot-event#readme) gpt ads
+[emit](https://github.com/emit-js/emit#readme) gpt ads
 
 ![coke](coke.gif)
 
 ## Install
 
 ```bash
-npm install dot-event @dot-event/ad
+npm install @emit-js/emit @emit-js/ad
 ```
 
 ## Usage
 
 ```js
-// Create dot-event instance
+// Create emit instance
 //
-const dot = require("dot-event")()
+const emit = require("@emit-js/emit")()
 
 // Create googletag init promise
 //
@@ -28,13 +28,13 @@ const initPromise = new Promise(resolve => {
   })
 })
 
-// Extend dot with ad listener
+// Extend emit with ad listener
 //
-require("@dot-event/ad")(dot, { initPromise: initPromise })
+require("@emit-js/ad")(emit, { initPromise: initPromise })
 
 // Display an ad unit
 //
-dot.ad({
+emit.ad({
   unit: {
     divId: "test",
     path: "/0123456/content1/science-and-chill",
@@ -57,6 +57,6 @@ dot.ad({
 ## Events
 
 ```js
-dot.any("adLoaded", console.log)
-dot.any("adRendered", console.log)
+emit.any("adLoaded", console.log)
+emit.any("adRendered", console.log)
 ```

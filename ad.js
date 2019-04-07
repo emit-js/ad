@@ -2,28 +2,28 @@
 /*prettier-ignore*/
 "use strict";
 
-module.exports = function(dot) {
-  if (dot.ad) {
-    return dot
+module.exports = function(emit, options) {
+  if (emit.ad) {
+    return emit
   }
 
-  dot.state.ad = {
-    initPromise: Promise.resolve(),
+  emit.state.ad = {
+    initPromise: options.initPromise || Promise.resolve(),
     slots: {},
   }
 
-  dot.any("ad", ad)
-  dot.state.ad.initPromise.then(setupListeners.bind(dot))
+  emit.any("ad", ad)
+  emit.state.ad.initPromise.then(setupListeners.bind(emit))
 
-  return dot
+  return emit
 }
 
-function ad(prop, arg, dot) {
-  var promise = dot.state.ad.initPromise
+function ad(arg, prop, emit) {
+  var promise = emit.state.ad.initPromise
 
   if (arg.unit) {
     promise = promise.then(function() {
-      unit(dot.state.ad.slots, arg.unit)
+      unit(emit.state.ad.slots, arg.unit)
     })
   }
 
@@ -37,14 +37,14 @@ function ad(prop, arg, dot) {
 }
 
 function setupListeners() {
-  var dot = this
+  var emit = this
 
   window.googletag
     .pubads()
     .addEventListener("slotRenderEnded", function(e) {
       var divId = e.slot.getSlotElementId()
 
-      dot("adRendered", divId, {
+      emit("adRendered", divId, {
         divId: divId,
         isEmpty: e.isEmpty,
         size: e.size,
@@ -56,7 +56,7 @@ function setupListeners() {
     .addEventListener("slotOnload", function(e) {
       var divId = e.slot.getSlotElementId()
 
-      dot("adLoaded", divId, { divId: divId })
+      emit("adLoaded", divId, { divId: divId })
     })
 }
 

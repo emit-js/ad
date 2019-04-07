@@ -3,7 +3,7 @@
 "use strict";
 
 var ad = require("./ad"),
-  dot = require("dot-event")()
+  emit = require("@emit-js/emit")()
 
 var initPromise = new Promise(function(resolve) {
   window.googletag.cmd.push(function() {
@@ -18,9 +18,9 @@ var initPromise = new Promise(function(resolve) {
   })
 })
 
-ad(dot, { initPromise: initPromise })
+ad(emit, { initPromise: initPromise })
 
-dot("ad", {
+emit("ad", {
   unit: {
     divId: "test",
     path: "/21054826/content1_1/art_science-and-chill",
@@ -29,7 +29,7 @@ dot("ad", {
 })
 
 // eslint-disable-next-line no-console
-dot.any("adLoaded", console.log)
+emit.any("adLoaded", console.log)
 
 // eslint-disable-next-line no-console
-dot.any("adRendered", console.log)
+emit.any("adRendered", console.log)
